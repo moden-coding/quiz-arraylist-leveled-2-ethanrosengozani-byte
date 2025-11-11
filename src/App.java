@@ -32,7 +32,7 @@ public class App {
 
         while (true) {
             System.out.print("Enter a participant name (or end to finish): ");
-            String name = scanner.nextLine().trim();
+            String name = scanner.nextLine();
             if (name.equals("end")) {
                 break;
             }
@@ -40,9 +40,9 @@ public class App {
             if (participantNames.contains(name)) {// if it is in there
                 System.out.print("This name already exist. Do you want to remove it? (yes/no): ");
                 String response = scanner.nextLine().trim();// then checks to see if they want to remove it
-                if (response.equalsIgnoreCase("yes")) {// yes then remove it
+                if (response.equals("yes")) {// yes then remove it
                     participantNames.remove(name);
-                } else if (response.equalsIgnoreCase("no")) {// no then do not remove it
+                } else if (response.equals("no")) {// no then do not remove it
                     // ignore the duplicate one
                 } else {
                     System.out.println("Please enter one of the 2 given options:");// making sure that only those 2 options
